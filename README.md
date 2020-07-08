@@ -1,9 +1,51 @@
-### Well hello there!
+# BACKBASE CODING CHALLENGE #
 
-This repository is meant to provide an example for *forking* a repository on GitHub.
+This is the explanation of the solution for Backbase Coding Exercise.
 
-Creating a *fork* is producing a personal copy of someone else's project. Forks act as a sort of bridge between the original repository and your personal copy. You can submit *Pull Requests* to help make other people's projects better by offering your changes up to the original project. Forking is at the core of social coding at GitHub.
+## Used Technologies and Libraries
 
-After forking this repository, you can make some changes to the project, and submit [a Pull Request](https://github.com/octocat/Spoon-Knife/pulls) as practice.
++ Java 11
++ Spring Boot 2+ (REST API)
++ Maven 3+
++ Docker
++ Junit / Mockito
++ Lombok
++ Intellij IDEA
 
-For some more information on how to fork a repository, [check out our guide, "Forking Projects""](http://guides.github.com/overviews/forking/). Thanks! :sparkling_heart:
+## Build and Run with Maven
+
+To run the application on your local machine.
+
+`mvn clean install`
+
+`mvn spring-boot:run `
+
+## Build and Run in Docker Container
+
+To run the application in a docker container.
+
+`docker build -t {image-name} .`
+
+` docker run -d -p 8080:8080 -t  {image-name}`
+
+## Runtime ##
+
+
+
+## Testing
+
+Below functionalities and edge cases are unit tested and documented inside the application
+
++ Initialize Game
+
++ Play Game
+
++ Collect tweets no more than maximum amount specified
+
++ Listen streaming no more than maximum duration specified
+
++ Group Tweets chronologically by their User creation date
+
++ Sort Tweets chronologically bu their creation date
+
++ Calculate stream rate as number of tweets per second filter by specified hashtag
