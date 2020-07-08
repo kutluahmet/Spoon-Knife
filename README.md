@@ -8,8 +8,9 @@ This is the explanation of the solution for Backbase Coding Exercise.
 + Spring Boot 2+ (REST API)
 + Maven 3+
 + Docker
-+ Junit / Mockito
++ Junit 5
 + Lombok
++ Swagger
 + Intellij IDEA
 
 ## Build and Run with Maven
