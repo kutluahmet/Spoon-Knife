@@ -28,8 +28,9 @@ To run the application in a docker container.
 
 ` docker run -d -p 8080:8080 -t  {image-name}`
 
-## Runtime ##
+## Swagger API Documentation ##
 
+`http://localhost:8080/swagger-ui.html`
 
 
 ## Testing
@@ -40,12 +41,10 @@ Below functionalities and edge cases are unit tested and documented inside the a
 
 + Play Game
 
-+ Collect tweets no more than maximum amount specified
++ Create Board
 
-+ Listen streaming no more than maximum duration specified
++ Distribute Stones
 
-+ Group Tweets chronologically by their User creation date
++ Perform Game rules
 
-+ Sort Tweets chronologically bu their creation date
-
-+ Calculate stream rate as number of tweets per second filter by specified hashtag
++ Determine winners
