@@ -49,20 +49,91 @@ Get CV or Status
 
 `curl --location --request GET localhost:8080/retrieve/{processId}?access_token={generatedToken}`
 
-## Sample Run
-```json{
-    "processId":"347b83e7-e283-48e8-9df3-c41d5f8c2fee",
-    "profile":{
-       "address":{
-          "city":"",
-          "postalCode":"",
-          "streetName":"",
-          "streetNumberBase":""
-       },
-       "lastName":"Ntshinka",
-       "firstName":"Andiswa"
+## Sample Execution
+
+#### 1. Access Token
+
+Request to get an api access token for testuser
+
+`curl --location --request GET http://localhost:8080/accesstoken --header Authorization:"Basic dGVzdHVzZXI6P1kqYmJMN0dtWExU" `
+
+Failed Response
+```json
+{
+    "code": 401,
+    "message": "User not found"
+}
+```
+
+Successful Response
+```json
+{
+    "code": 201,
+    "message": "Access token is generated",
+    "token": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1ZjE0N2Y1YmVjMzE4MjM1YjVjNmJkODIiLCJpYXQiOjE1OTUxNzg4ODEsImV4cCI6MTU5NTE3ODk4MX0.cOzZsFI6VgbT0xiofe8PZLhN_f3Rko4-wCXg_4ijzPc"
+}
+```
+
+#### 2. Submit CV
+
+Request to post a CV to be parsed 
+`curl --location --request POST localhost:8080/submit?access_token=eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1ZjE0N2Y1YmVjMzE4MjM1YjVjNmJkODIiLCJpYXQiOjE1OTUxNzg4ODEsImV4cCI6MTU5NTE3ODk4MX0.cOzZsFI6VgbT0xiofe8PZLhN_f3Rko4-wCXg_4ijzPc --form uploaded_file=@"petra.pdf"
+`
+
+Failed Response
+```json
+{
+    "code": 401,
+    "message": "Token Validation is failed"
+}
+```
+
+Successful Response
+```json
+{
+    "processId": "4dc77ad4-83ae-48be-a6cc-c8a8850bee5c",
+    "status": "IN_PROGRESS"
+}
+```
+
+#### 3. Retrieve CV
+
+Request to post a CV to be parsed 
+
+`curl --location --request GET localhost:8080/retrieve/4dc77ad4-83ae-48be-a6cc-c8a8850bee5c?access_token=access_token=eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1ZjE0N2Y1YmVjMzE4MjM1YjVjNmJkODIiLCJpYXQiOjE1OTUxNzg4ODEsImV4cCI6MTU5NTE3ODk4MX0.cOzZsFI6VgbT0xiofe8PZLhN_f3Rko4-wCXg_4ijzPc`
+                                                                                                         `
+If CV process failed
+```json
+{
+    "processId": "4dc77ad4-83ae-48be-a6cc-c8a8850bee5c",
+    "status": "INVALID"
+}
+```
+
+If CV process still underway
+```json
+{
+    "processId": "4dc77ad4-83ae-48be-a6cc-c8a8850bee5c",
+    "status": "IN_PROGRESS"
+}
+```
+
+Successful Response
+```json
+{
+    "processId": "4dc77ad4-83ae-48be-a6cc-c8a8850bee5c",
+    "profile": {
+        "address": {
+            "streetNumberBase": "15-A",
+            "city": "EDE",
+            "streetName": "Hoofdstraat",
+            "postalCode": "6717 AA"
+        },
+        "firstName": "Petra",
+        "lastName": "van de Ven"
     }
- }```
+}
+```
 
 ## Design Choices and Basic Algorithms
 
