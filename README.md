@@ -50,7 +50,7 @@ Get CV or Status
 `curl --location --request GET localhost:8080/retrieve/{processId}?access_token={generatedToken}`
 
 ## Sample Run
-`{
+```json{
     "processId":"347b83e7-e283-48e8-9df3-c41d5f8c2fee",
     "profile":{
        "address":{
@@ -62,7 +62,7 @@ Get CV or Status
        "lastName":"Ntshinka",
        "firstName":"Andiswa"
     }
- }`
+ }
 
 ## Design Choices and Basic Algorithms
 
