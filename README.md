@@ -77,6 +77,7 @@ Successful Response
 #### 2. Submit CV
 
 Request to post a CV to be parsed 
+
 `curl --location --request POST localhost:8080/submit?access_token=eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1ZjE0N2Y1YmVjMzE4MjM1YjVjNmJkODIiLCJpYXQiOjE1OTUxNzg4ODEsImV4cCI6MTU5NTE3ODk4MX0.cOzZsFI6VgbT0xiofe8PZLhN_f3Rko4-wCXg_4ijzPc --form uploaded_file=@"petra.pdf"
 `
 
@@ -101,8 +102,10 @@ Successful Response
 Request to post a CV to be parsed 
 
 `curl --location --request GET localhost:8080/retrieve/4dc77ad4-83ae-48be-a6cc-c8a8850bee5c?access_token=access_token=eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1ZjE0N2Y1YmVjMzE4MjM1YjVjNmJkODIiLCJpYXQiOjE1OTUxNzg4ODEsImV4cCI6MTU5NTE3ODk4MX0.cOzZsFI6VgbT0xiofe8PZLhN_f3Rko4-wCXg_4ijzPc`
+
                                                                                                          `
 If CV process failed
+
 ```json
 {
     "processId": "4dc77ad4-83ae-48be-a6cc-c8a8850bee5c",
@@ -111,6 +114,7 @@ If CV process failed
 ```
 
 If CV process still underway
+
 ```json
 {
     "processId": "4dc77ad4-83ae-48be-a6cc-c8a8850bee5c",
