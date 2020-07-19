@@ -51,18 +51,18 @@ Get CV or Status
 
 ## Sample Run
 `{
-    "processId": "347b83e7-e283-48e8-9df3-c41d5f8c2fee",
-    "profile": {
-        "address": {
-            "city": "",
-            "postalCode": "",
-            "streetName": "",
-            "streetNumberBase": ""
-        },
-        "lastName": "Ntshinka",
-        "firstName": "Andiswa"
+    "processId":"347b83e7-e283-48e8-9df3-c41d5f8c2fee",
+    "profile":{
+       "address":{
+          "city":"",
+          "postalCode":"",
+          "streetName":"",
+          "streetNumberBase":""
+       },
+       "lastName":"Ntshinka",
+       "firstName":"Andiswa"
     }
-}`
+ }`
 
 ## Design Choices and Basic Algorithms
 
