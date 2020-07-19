@@ -36,15 +36,15 @@ To run the application in a docker container.
 
 ## CURL Commands
 
-+ Generate Access Token
+Generate Access Token
 
 `curl --location --request GET http://localhost:8080/accesstoken --header Authorization:"Basic dGVzdHVzZXI6P1kqYmJMN0dtWExU" `
 
-+ Submit CV to be Parsed
+Submit CV to be Parsed
 
 `curl --location --request POST localhost:8080/submit?access_token={generatedToken} --form uploaded_file=@"{pathToCVFile}"
 `
-+ Get CV or Status
+Get CV or Status
 
 `curl --location --request GET localhost:8080/retrieve/{processId}?access_token={generatedToken}`
 
