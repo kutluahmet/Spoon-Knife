@@ -44,6 +44,7 @@ Submit CV to be Parsed
 
 `curl --location --request POST localhost:8080/submit?access_token={generatedToken} --form uploaded_file=@"{pathToCVFile}"
 `
+
 Get CV or Status
 
 `curl --location --request GET localhost:8080/retrieve/{processId}?access_token={generatedToken}`
